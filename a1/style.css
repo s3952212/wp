@@ -1,0 +1,171 @@
+.main-image {
+  float: right;
+  margin-left: 20px;
+}
+body {
+    font-family: 'Ysabeau SC', serif;
+    display: flex;
+    margin: auto;
+    background-color: rgb(227, 233, 224);
+    width: 1200px;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #264653;
+    padding:10px
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav a img {
+    width: 40px;
+    height: auto;
+}
+
+nav select {
+    margin-right: auto;
+}
+    
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  main {
+    padding: 20px 40px;
+    display:block;
+    
+  }
+  
+  main p{
+    font-size: 15px;
+    line-height: 1.5;
+    color:rgb(80,144,164);
+  }
+  main h1 {
+    font-family: 'Exo', sans-serif;
+    font-size: 75px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color:rgb(71, 147, 209)
+  }
+  .container {
+    display: flex;
+    margin-top: 50px
+  }
+
+  main h2 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 65px;
+    line-height: 1.2;
+    margin-top:100px;
+    line-height: 1.5;
+    color:rgb(80,144,164);
+  }
+
+  .main-image {
+    width: 45%;
+    position: relative;
+    border-radius: 50%;
+    margin-left:auto;
+    margin-top:80px;
+  }
+
+  .feature-image {
+    width: 45%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+  }
+  .hikes-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  table{
+    margin-left: auto;
+    width:40%;
+    border: 5px solid rgb(103, 103, 104);
+  }
+  main h3 {
+    color:#264653;
+    text-align:center;
+  }
+  
+  .toptext {
+    text-align:center;
+  }
+
+  .addform {
+    margin-right: auto;
+    margin-left: 0;
+    margin: auto;
+    width: 80%;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  label {
+    color: #264653;
+    font-weight:bold;
+  }
+
+  table th{
+    background-color: rgb(203,213,195);
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    text-align:center;
+    color:#264653;
+    border-radius: 10px;
+  }
+
+  .gallery figure img{
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .gallery figure, .gallery figure  {
+    border-radius: 10px;
+    border: 0.5px solid #d0d7da;
+  }
+
+  footer {
+    background-color: rgb(203,213,195);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  footer p {
+    margin: 15px;
+    color:rgb(105, 134, 87)
+  }
