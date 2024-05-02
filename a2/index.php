@@ -1,3 +1,9 @@
+<?php
+include 'header.inc'; 
+include 'nav.inc';   
+include 'db_connect.inc'; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,34 +17,35 @@
 <body>
     <header>
         <nav>
-            <a href="index.html">
+            <a href="index.php">
                 <img src="images/logo.png" alt="Hikes Victoria Logo">
             </a>
             <select name="menu" onchange="location = this.value;">
                 <option value="#">Select an Option...</option>
-                <option value="index.html">Home</option>
-                <option value="hikes.html">Hikes</option>
-                <option value="add.html">Add More</option>
-                <option value="gallery.html">Gallery</option>
+                <option value="index.php">Home</option>
+                <option value="hikes.php">Hikes</option>
+                <option value="add.php">Add More</option>
+                <option value="gallery.php">Gallery</option>
             </select>
             <div class="search-bar">
-                <input type="text" placeholder="Search">
-                <button type="submit"><span class="material-icons">search</span></button>
+                <form action="search.php" method="get">
+                    <input type="text" name="query" placeholder="Search">
+                    <button type="submit"><span class="material-icons">search</span></button>
+                </form>
             </div>
         </nav>
     </header>
     <main>
-        <div class = "container">
-        <div> 
-        <h1 >HIKES VICTORIA</h1>
-        <h2>Welcome to <br> Victoria</h2>
+        <div class="container">
+            <div> 
+                <h1>HIKES VICTORIA</h1>
+                <h2>Welcome to Victoria</h2>
             </div>
-        <img src="images/apostles.jpg" alt="Twelve Apostles" class="main-image">
+            <img src="images/apostles.jpg" alt="Twelve Apostles" class="main-image">
         </div>
     </main>
-
-    <footer>
-        <p>&copy; COPYRIGHT S3952212. ALL RIGHTS RESERVED | DESIGNED FOR HIKES VICTORIA</p>
-    </footer>
+    <?php 
+    include 'footer.inc'; 
+    ?>
 </body>
 </html>
