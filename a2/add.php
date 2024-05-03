@@ -2,6 +2,44 @@
 include 'header.inc';
 include 'nav.inc';
 include 'db_connect.inc';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $hikeName = $_POST['hike_name'];
+    $description = $_POST['description'];
+    $imageCaption = $_POST['image_caption'];
+    $distance = $_POST['distance'];
+    $location = $_POST['location'];
+    $level = $_POST['level'];
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+        $allowedTypes = ['jpg' => 'image/jpg', 'jpeg' => 'image/jpeg', 'png' => 'image/png'];
+        $fileType = $_FILES['image']['type'];
+        $fileName = $_FILES['image']['name'];
+        $fileTmp = $_FILES['image']['tmp_name'];
+        if (!array_key_exists(pathinfo($fileName, PATHINFO_EXTENSION), $allowedTypes)) {
+            die('Error: Please upload a valid image type.');
+        }
+        $uploadPath = 'images/' . $fileName;
+        if (!move_uploaded_file($fileTmp, $uploadPath)) {
+            die('Error: File upload failed.');
+        }
+    } else {
+        die('Error: ' . $_FILES['image']['error']);
+    }
+
+    $sql = "INSERT INTO hikes (hikename, description, image, caption, distance, location, level) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    if ($stmt === false) {
+        die('MySQL prepare error: ' . $stmt->error);
+    }
+
+    $stmt->bind_param('ssssdss', $hikeName, $description, $fileName, $imageCaption, $distance, $location, $level);
+    if ($stmt->execute()) {
+        echo 'Hike added successfully!';
+    } else {
+        echo 'Error: ' . $stmt->error;
+    }
+    $stmt->close();
+}
+$conn->close();
 ?>
 
 <!DOCTYPE html>

@@ -1,3 +1,8 @@
+<?php
+include 'header.inc';
+include 'nav.inc';
+include 'db_connect.inc';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,8 +85,6 @@
         </div>
     </main>
 
-    <footer>
-        <p>&copy; COPYRIGHT S3952212. ALL RIGHTS RESERVED | DESIGNED FOR HIKES VICTORIA</p>
-    </footer>
-</body>
-</html>
+    <?php 
+    include 'footer.inc'; 
+    ?>

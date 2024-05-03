@@ -47,5 +47,3 @@ include 'db_connect.inc';
     <?php 
     include 'footer.inc'; 
     ?>
-</body>
-</html>
